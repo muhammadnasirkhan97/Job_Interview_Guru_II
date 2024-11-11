@@ -4,7 +4,7 @@ from transformers import pipeline
 from huggingface_hub import login
 
 # Authenticate with Hugging Face
-login(token="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")  # Replace 'your_token' with your Hugging Face token
+login(token="TOKEN_KEY")  # Replace 'your_token' with your Hugging Face token
 
 # Load the model pipeline
 qa_model = pipeline("text-generation", model="distilgpt2")
