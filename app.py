@@ -1,10 +1,12 @@
 # app.py
+import os
 import streamlit as st
 from transformers import pipeline
 from huggingface_hub import login
 
-# Authenticate with Hugging Face
-login(token="TOKEN_KEY")  # Replace 'your_token' with your Hugging Face token
+# Authenticate with Hugging Face using the TOKEN_KEY environment variable
+token = os.getenv("TOKEN_KEY")
+login(token=token) 
 
 # Load the model pipeline
 qa_model = pipeline("text-generation", model="distilgpt2")
